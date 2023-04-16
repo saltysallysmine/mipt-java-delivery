@@ -7,17 +7,17 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BrokerConfiguration {
 
-    public static final String MOSCOW_NAME = "moscow_queue";
-    public static final String SAINT_PETERSBURG_NAME = "saint_petersburg_queue";
+    public static final String MOSCOW = "MOSCOW";
+    public static final String SAINT_PETERSBURG = "SAINT_PETERSBURG";
 
     @Bean
     public Queue SaintPetersburgQueue() {
-        return new Queue(SAINT_PETERSBURG_NAME, true);
+        return new Queue(SAINT_PETERSBURG, true);
     }
 
     @Bean
     public Queue MoscowQueue() {
-        return new Queue(MOSCOW_NAME, true);
+        return new Queue(MOSCOW, true);
     }
 
 }

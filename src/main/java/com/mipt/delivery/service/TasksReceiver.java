@@ -21,7 +21,7 @@ public class TasksReceiver {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    @RabbitListener(queues = BrokerConfiguration.SAINT_PETERSBURG_NAME, ackMode = "MANUAL")
+    @RabbitListener(queues = BrokerConfiguration.SAINT_PETERSBURG, ackMode = "MANUAL")
     public void receiveFromSaintPetersburg(String text, MessageHeaders headers, Channel channel,
                                            @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException, InterruptedException {
         log.info("Get message from Saint-Petersburg");
@@ -29,7 +29,7 @@ public class TasksReceiver {
         channel.basicAck(tag, false);
     }
 
-    @RabbitListener(queues = BrokerConfiguration.MOSCOW_NAME, ackMode = "MANUAL")
+    @RabbitListener(queues = BrokerConfiguration.MOSCOW, ackMode = "MANUAL")
     public void receiveFromMoscow(String text, MessageHeaders headers, Channel channel,
                                   @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException, InterruptedException {
         log.info("Get message from Moscow");
