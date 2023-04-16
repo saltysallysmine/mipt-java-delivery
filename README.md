@@ -6,6 +6,17 @@ Execute tests if you want to see what it can do. Users send POST-requests from d
 
 I am keeping ahead of forward compatibility, this is why I created the **City class** to which new cities can easily be added.
 
+## Running project tests
+Firstly, run RabbitMQ at the root of the project.
+
+```bash
+sudo docker compose up
+# or
+docker compose up
+```
+
+Then build project and execute **MainControllerTest** class.
+
 ---
 
 Developed by *Bergman Valery*.
