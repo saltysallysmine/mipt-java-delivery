@@ -12,3 +12,5 @@ services:
     image: rabbitmq-demo-controller:0.0.1-SNAPSHOT
     environment:
       spring.rabbitmq.host: rabbitmq
+    ports:
+      - "8080:8080"
