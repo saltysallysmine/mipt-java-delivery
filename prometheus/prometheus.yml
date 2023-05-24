@@ -13,8 +13,8 @@ scrape_configs:
     static_configs:
       - targets: [ 'localhost:9090' ]
 
-  - job_name: 'demo_application'
+  - job_name: 'controller'
     scrape_interval: 15s
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: [ 'application:8080' ]
+      - targets: [ 'controller:8080' ]
